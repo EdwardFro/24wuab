@@ -1,0 +1,162 @@
+
+
+#wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto auto auto;
+    gap: 5px;
+    grid-template-areas: 
+        'hd hd hd as as as'
+        'nv nv nv nv nv nv'
+        'mn mn sc sc sc sc'
+        'ft ft ft ft ft ft';
+    max-width: 100vw;
+}
+
+header {
+    grid-area: hd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#logga{
+    height: 100px;
+    width: auto;
+    
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    overflow: hidden;
+    background: #f3e9e9;
+  }
+  div{
+    box-sizing: border-box;
+  }
+  nav{
+    background-color: #f3e9e9;
+    height: 120px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    color: #ba2626;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  }
+  .nav-links {
+      display: flex;
+      justify-content:space-around;
+      width: 50%;
+      font-size: 20px;
+      text-transform: uppercase;
+  }
+  .nav-links a{
+    display: block;
+     text-transform: uppercase;
+     text-decoration: none;
+     color: #ba2626;
+    border-bottom:2px solid transparent;
+    transition:0.5s ease;
+    transform: translateX(0%);
+  }
+  .nav-links a:hover{
+    color: #ca2525;
+  }
+
+  /* Add the new CSS code below the existing code */
+
+.burger {
+    display: block;
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    background-color: red; /* Initial color */
+    transition: background-color 0.5s; /* Smooth transition */
+  }
+  
+  .burger.white {
+    background-color: white; /* White color when pressed */
+  }
+  
+  .nav-links a.white {
+    color: white; /* White color for links when menu is open */
+  }
+  
+  .burger{
+    display: none;
+  }
+  .burger div{
+    width: 25px;
+    height: 3px;
+    background: #ba2626;
+    margin: 5px;
+    transition:all 0.5s ease;
+  }
+  @media only screen and (max-width: 760px){
+     nav{
+      justify-content: space-between;
+      padding: 0 5vw;
+    }
+    .nav-links{
+      position: absolute;
+      right: 0;
+      top:8vh;
+      min-height:92vh;
+      background: #ba2626;
+      display: flex;
+      flex-direction: column;
+      align-items: center;   
+      width: 50%;
+      margin: 0;
+      padding: 0;
+      transform: translateX(100%);
+      transition:All 0.5s ease-in;
+    }
+    .nav-links a{
+      opacity: 0;
+   
+    }
+    .burger{
+      display: block;
+    }
+   
+  }
+  @media only screen and (max-width: 640px){
+    nav{
+      justify-content: space-between;
+      padding: 0 5vw;
+    }
+  }
+  .nav-active{
+    transform: translateX(0);
+  }
+  @media only screen and (max-width: 460px){
+    .nav-links{
+      width: 100%;
+      transition:All 0.5s ease;
+    }
+  }
+  .nav-active{
+    transform: translateX(0);
+  }
+  @keyframes navLinkFade{
+    from{
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to{
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .toggle .line1{
+     transform: rotate(-45deg) translate(-5px,6px );
+  }
+  .toggle .line2{
+     opacity: 0;
+  }
+  .toggle .line3{
+     transform: rotate(45deg) translate(-5px,-6px );
+  }
