@@ -7,7 +7,7 @@ const navSlide = () => {
   
     burger.addEventListener("click", () => {
       nav.classList.toggle("nav-active");
-      burger.classList.toggle("white"); // Toggle burger color
+      burger.classList.toggle("white");
   
       navLinks.forEach((link, index) => {
         if (link.style.animation) {
@@ -17,7 +17,6 @@ const navSlide = () => {
         }
       });
   
-      // Toggle link color
       navLinks.forEach(link => {
         link.classList.toggle("white");
       });
